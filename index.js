@@ -1,10 +1,12 @@
-const { Telegraf } = require('telegraf')
+// const { Telegraf } = require('telegraf')
+const { Composer } = require('micro-bot')
 const fetch = require('node-fetch')
 require('dotenv').config()
 
 const url = 'https://tgftp.nws.noaa.gov/data/observations/metar/stations/'
 
-bot = new Telegraf(process.env.BOT_TOKEN)
+// bot = new Telegraf(process.env.BOT_TOKEN)
+bot = new Composer
 bot.start(ctx => ctx.reply('Welcome'))
 bot.help(ctx => ctx.reply('Send me a sticker'))
 bot.on('sticker', ctx => ctx.reply('👍'))
@@ -15,7 +17,8 @@ bot.hears('unkl', ctx => {
     .then(Response => Response.text())
     .then(Response => ctx.reply(Response))
 })
-bot.launch()
+// bot.launch()
+module.exports = bot
 
 const getMetar = (icao) => {
   fetch(url + icao.toUpperCase() + '.TXT')
