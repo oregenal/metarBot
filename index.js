@@ -15,10 +15,4 @@ bot.launch()
 function getMetar(icao) {
   fetch(url + icao.toUpperCase() + '.TXT')
     .then(res => res.text())
-    .then(text => {
-      metarData.innerHTML = ''
-      const content = document.createElement('p')
-      content.innerHTML = text
-      metarData.appendChild(content)
-    })
 }
