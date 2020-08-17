@@ -1,6 +1,5 @@
 const { Telegraf } = require('telegraf')
 const express = require('express')
-// const { Composer } = require('micro-bot')
 const fetch = require('node-fetch')
 
 const expressApp = express()
@@ -17,7 +16,6 @@ expressApp.listen(port, () => {
 })
 
 bot = new Telegraf(process.env.BOT_TOKEN)
-// bot = new Composer
 bot.start(ctx => ctx.reply('Welcome'))
 bot.help(ctx => ctx.reply('Send me a sticker'))
 bot.on('sticker', ctx => ctx.reply('👍'))
@@ -29,7 +27,6 @@ bot.hears('unkl', ctx => {
     .then(Response => ctx.reply(Response))
 })
 bot.launch()
-// module.exports = bot
 
 const getMetar = (icao) => {
   fetch(url + icao.toUpperCase() + '.TXT')
