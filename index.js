@@ -4,9 +4,6 @@ require('dotenv').config()
 
 const url = 'https://tgftp.nws.noaa.gov/data/observations/metar/stations/'
 
-let metar = ''
-
-
 bot = new Telegraf(process.env.BOT_TOKEN)
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
