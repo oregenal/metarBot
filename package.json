@@ -1,0 +1,23 @@
+{
+  "name": "telegrammbot",
+  "version": "1.0.0",
+  "description": "telegramm bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [
+    "JS",
+    "Bot"
+  ],
+  "author": "Andrey Gud <nosacred@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "telegraf": "^3.38.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
