@@ -1,19 +1,9 @@
 const { Telegraf } = require('telegraf')
-const express = require('express')
 const fetch = require('node-fetch')
 
-const expressApp = express()
 require('dotenv').config()
 
 const url = 'https://tgftp.nws.noaa.gov/data/observations/metar/stations/'
-
-const port = process.env.PORT || 3000
-expressApp.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-expressApp.listen(port, () => {
-  console.log(`Listening on port ${port}`)
-})
 
 bot = new Telegraf(process.env.BOT_TOKEN)
 bot.start(ctx => ctx.reply('Бот Жора предсказывает погоду.'))
