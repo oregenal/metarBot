@@ -27,4 +27,5 @@ bot.hears(/^hpa/i, ctx => {
   const hpa = ctx.message.text.slice(3, 9)
   ctx.reply(hpa + ' hPa, ' + Math.round(hpa / 1.333) + ' mmHg, ' + Math.round(hpa / 33.864 * 100) / 100 + ' inHg.')
 })
+bot.hears(/^zulu/i, ctx => ctx.reply(Date().slice(16, 21)))
 bot.launch()
